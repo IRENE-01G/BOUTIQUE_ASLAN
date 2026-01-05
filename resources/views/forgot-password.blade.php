@@ -6,6 +6,7 @@
     <title>Mot de passe oublié - Beauté & Mode</title>
     <link rel="stylesheet" href="{{ asset('styles/Accueil.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/inscription.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/lg.png') }}">   
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
