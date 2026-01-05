@@ -25,5 +25,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
         ]);
+
+        User::create([
+            'name' => 'Admin Aslan',
+            'email' => 'admin@aslan.com',
+            'password' => bcrypt('password123'),
+            'role' => 'admin',
+            'email_verified_at' => now(),
+        ]);
     }
 }

@@ -2,36 +2,18 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use Illuminate\Http\Request;
-
-class AuthController extends Controller
-{
-    public function login()
-    {
-        return view('connexion');
-    }
-
-    public function register()
-=======
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     public function showRegistrationForm()
->>>>>>> aed3f578713dd423a6d2266c8a50946967d87ce0
     {
-        return view('inscription');
+        return view('auth.inscription');
     }
 
-<<<<<<< HEAD
-    public function forgotPassword()
-    {
-        return view('forgot-password');
-=======
     public function register(Request $request)
     {
         $request->validate([
@@ -53,7 +35,7 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view('connexion');
+        return view('auth.connexion');
     }
 
     public function login(Request $request)
@@ -65,6 +47,10 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
+            // Redirect to admin if user is admin (example logic)
+            if (Auth::user()->role === 'admin')
+                return redirect()->route('admin.dashboard');
 
             return redirect()->intended('/')->with('success', 'Vous êtes connecté !');
         }
@@ -79,10 +65,13 @@ class AuthController extends Controller
         Auth::logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/');
->>>>>>> aed3f578713dd423a6d2266c8a50946967d87ce0
+    }
+
+    public function forgotPassword()
+    {
+        return view('auth.forgot-password');
     }
 }

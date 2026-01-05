@@ -33,7 +33,7 @@
         <div class="auth-form-side">
             <div class="form-wrapper">
                 <div class="brand-logo">
-                    <img src="{{ asset('assets/lg.png') }}" alt="Logo" style="width: 200px; height: 200px;">
+                    <img src="{{ asset('assets/lg.png') }}" alt="Logo" style="width: 100px; height: 100px;">
                 </div>
                 
                 <h2>Créer un compte</h2>

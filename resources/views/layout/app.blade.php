@@ -35,8 +35,17 @@
             </ul>
 
             <div class="nav-actions">
-                <button class="btn-rendez-vous">Prendre rendez-vous</button>
-                <button class="btn-connexion">Connexion</button>
+                <a href="{{ route('rendez-vous') }}" class="btn-rendez-vous" style="text-decoration: none;">Prendre rendez-vous</a>
+                
+                @auth
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn-connexion">Déconnexion</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="btn-connexion" style="text-decoration: none;">Connexion</a>
+                @endauth
+
                 <div class="cart-icon">
                     <i class='bx bx-cart'></i>
                     <span class="cart-badge">0</span>
