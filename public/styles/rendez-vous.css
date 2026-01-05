@@ -1,0 +1,296 @@
+/* Rendez-vous Specific Styles */
+
+/* Hero */
+.booking-hero {
+    background-color: #fff0f3;
+    padding: 80px 20px 60px;
+    text-align: center;
+}
+
+.badge-pill {
+    background: #ff6b81;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.booking-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #d4af37;
+}
+
+.booking-hero p {
+    color: #64748b;
+    font-size: 18px;
+}
+
+/* Booking Layout */
+.booking-container {
+    max-width: 900px;
+    margin: -40px auto 80px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.booking-form {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+}
+
+/* Sections */
+.form-section {
+    margin-bottom: 50px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 20px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Service Cards */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.service-card input {
+    position: absolute;
+    opacity: 0;
+}
+
+.card-content {
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.service-card input:checked+.card-content {
+    border-color: #d4af37;
+    background-color: #fffdf5;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.price {
+    color: #d4af37;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.duration {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* DateTime */
+.datetime-wrapper {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.calendar-container,
+.time-slots {
+    flex: 1;
+    min-width: 300px;
+}
+
+.datetime-wrapper h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.day-name {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.calendar-grid span:not(.day-name) {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #f8fafc;
+    color: #334155;
+    transition: all 0.2s;
+}
+
+.calendar-grid span.active-day {
+    background: #1a1a1a;
+    color: white;
+}
+
+.calendar-grid span:hover:not(.disabled):not(.active-day) {
+    background: #e2e8f0;
+}
+
+.calendar-grid .disabled,
+.calendar-grid .disabled-day {
+    color: #cbd5e1;
+    cursor: not-allowed;
+    background: transparent;
+}
+
+/* Time Slots */
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.time-slot {
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    color: #334155;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.time-slot.active {
+    background: #ff6b81;
+    color: white;
+    border-color: #ff6b81;
+}
+
+.time-slot:disabled {
+    background: #f1f5f9;
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+/* Contact Inputs */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-full {
+    grid-column: 1 / -1;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: inherit;
+    outline: none;
+    transition: border 0.3s;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #d4af37;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* Submit Button */
+.btn-confirm {
+    width: 100%;
+    padding: 18px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform 0.2s;
+}
+
+.btn-confirm:hover {
+    background: #333;
+    transform: translateY(-2px);
+}

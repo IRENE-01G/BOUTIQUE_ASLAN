@@ -1,0 +1,216 @@
+/* Boutique Specific Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Hero */
+.boutique-hero {
+    background-color: #fff0f3;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 6px 16px;
+    background: white;
+    color: #ff6b81;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.boutique-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.boutique-hero p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* Layout */
+.boutique-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    gap: 50px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.filter-group {
+    margin-bottom: 40px;
+}
+
+.filter-group h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #334155;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+}
+
+.category-item:hover {
+    background-color: #f8fafc;
+}
+
+.category-item.active {
+    background-color: #ff6b81;
+    color: white;
+}
+
+.count-badge {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.category-item.active .count-badge {
+    color: white;
+    opacity: 0.8;
+}
+
+.count-text {
+    /* Special fix for grey text if not active, same class as badge */
+}
+
+/* Price Radio */
+.price-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.radio-option input {
+    display: none;
+}
+
+.radio-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.radio-option input:checked+.radio-custom {
+    border-color: #007aff;
+}
+
+.radio-option input:checked+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #007aff;
+    border-radius: 50%;
+}
+
+.btn-reset {
+    width: 100%;
+    padding: 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+    background: #e2e8f0;
+    color: #333;
+}
+
+/* Product Area */
+.products-area {
+    flex: 1;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.products-header p {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.sort-dropdown select {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #334155;
+    margin-left: 10px;
+    outline: none;
+}
+
+.boutique-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Modifying Product Card for Boutique (smaller, layout tweaks) */
+.product-card {
+    /* Inherits base styles from Accueil.css, verifying specific adjustments */
+    padding: 20px;
+}
+
+.stock-status {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
