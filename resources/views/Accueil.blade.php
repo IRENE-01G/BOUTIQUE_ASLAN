@@ -1,91 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/aslan.png') }}">
-    <link rel="stylesheet" href="{{ asset('styles/Accueil.css') }}">
-</head>
-<body>
-    <header>
-<nav>
-    <img src="{{ asset('assets/aslan.png') }}" alt="Logo Aslan Shop" width="100" height="100" style="border-radius: 140%">
-    <ul>
-        <li><a href="">Accueil</a></li>
-        <li><a href="">Boutique</a></li>
-        <li><a href="">Service</a></li>
-        <li><a href="">Rendez-vous</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Panier</a></li>
-        <button>Connexion</button>
-    </ul>
-</nav>
-    </header><br><br><br>
-<section>
-    <div>
-    <img src="{{ asset('assets/yu.jpg') }}" alt="Image Accueil" width="600" height="600" style="border-radius: 50px 30px 50px 30px; margin-top: 70px; box-shadow: 10px 10px 20px grey; margin-bottom: 70px; margin-left: 50px;">
-    </div>
+@extends('layout.app')
 
- <div class="texte">
-    <h1>Beauté <br> Africaine <br>Redéfinie </h1> <br>
-    <p>Découvrez notre gamme exclusive de produits de beauté africains, conçus pour sublimer votre peau et vos cheveux avec des ingrédients naturels et authentiques.</p> <br><br><br><br>
+@section('content')
+    <section class="hero">
+        <div class="hero-image-container">
+            <img src="{{ asset('assets/yu.jpg') }}" alt="Beauty Model" class="hero-image">
+        </div>
+        
+        <div class="hero-content">
+            <h1>Beauté <br> Africaine <br> <span class="highlight">Redéfinie</span></h1>
+            <p>Découvrez notre collection exclusive de mèches, pagnes et accessoires. Prenez rendez-vous pour un tressage professionnel réalisé par nos expertes.</p>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary">
+                    Explorer la Boutique 
+                    <i class='bx bx-right-arrow-alt'></i>
+                </button>
+                <button class="btn-secondary">
+                    <i class='bx bx-calendar'></i>
+                    Prendre RDV
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="universe-section">
+        <p class="section-subtitle">NOS COLLECTIONS</p>
+        <h1>Explorez Nos Univers</h1>
+        
+        <div class="universe-grid">
+            <!-- Card 1: Mèches & Extensions -->
+            <div class="universe-card">
+                <div class="card-header bg-pink">
+                    <img src="{{ asset('assets/french_curly.jpg') }}" alt="Mèches & Extensions">
+                </div>
+                <div class="card-body">
+                    <h3>Mèches & Extensions</h3>
+                    <p>150+ produits</p>
+                    <button class="card-arrow-btn">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </div>
+            </div>
     
-    <button type="submit">Explorer la Boutique</button>
-    <button class="rendez-vous" type="submit" >Prendre un Rendez-vous</button>
-
-</div>
-</section><br><br><br>
-
-<div class="promo">
-<div class="collection">
-<p>Notre Collection</p>
-<h1>Explorez Nos Univers</h1><br><br>
-<div class="cards">
-    <div class="card">
-        <img src="{{ asset('assets/lp.jpg') }}" alt="Soin de la Peau" width="300" height="300" style="border-radius: 20px;"><br><br>
-        <h2>Soin de la Peau</h2><br>
-        <h3>Découvrez nos produits naturels pour une peau <br>éclatante et en bonne santé.</h3><br>
+            <!-- Card 2: Pagnes Africains -->
+            <div class="universe-card">
+                <div class="card-header bg-orange">
+                    <img src="{{ asset('assets/lp.jpg') }}" alt="Pagnes Africains"> <!-- Generic placeholder if no cloth image -->
+                </div>
+                <div class="card-body">
+                    <h3>Pagnes Africains</h3>
+                    <p>80+ modèles</p><br><br>
+                    <button class="card-arrow-btn">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Card 3: Sacs & Accessoires -->
+            <div class="universe-card">
+                <div class="card-header bg-purple">
+                    <img src="{{ asset('assets/sac.jpg') }}" alt="Sacs & Accessoires">
+                </div>
+                <div class="card-body">
+                    <h3>Sacs & Accessoires</h3>
+                    <p>120+ articles</p>
+                    <button class="card-arrow-btn">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Card 4: Chaussures Mode -->
+            <div class="universe-card">
+                <div class="card-header bg-blue">
+                    <img src="{{ asset('assets/yu.jpg') }}" alt="Chaussures Mode"> <!-- Using model image as placeholder -->
+                </div>
+                <div class="card-body">
+                    <h3>Chaussures Mode</h3>
+                    <p>90+ paires</p>
+                    <button class="card-arrow-btn">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
     
-
-    <div class="card">
-        <img src="{{ asset('assets/natte.jpg') }}" alt="Maquillage" width="300" height="300" style="border-radius: 20px;"><br><br>
-        <h2>Tresse stich  </h2><br>
-       <h3>Des produits de maquillage inspirés par la beauté<br> africaine pour un look unique.</h3><br>
-    </div>
-     <div class="card">
-        <img src="{{ asset('assets/natte.jpg') }}" alt="Maquillage" width="300" height="300" style="border-radius: 20px;"><br><br>
-        <h2>Tresse stich </h2><br>
-       <h3>Des produits de maquillage inspirés par la beauté<br> africaine pour un look unique.</h3><br>
-    </div>
-
-</div>
-</div><br><br><br>
-
-<div class="service">
-    <div class="info-service">
-
-        <h1>Tressage professionnel <br> sur rendez-vous</h1><br>
-        <p>Réservez votre séance de tressage avec nos experts pour un style impeccable et personnalisé.</p><br><br>
-        <ol>✅ Expertise de 10+ ans</ol><br>
-        <ol>✅ Produits de qualité</ol><br>
-        <ol>✅ Ambiance conviviale</ol><br><br>
-      <button type="submit" style="margin-right: 190px;">🗓 Reservez maintenant</button>
-    </div>
-    <div class="image-service">
-        <img src="{{ asset('assets/twist.jpg') }}" alt="Service de Tressage" width="500" height="500" style="border-radius: 30px; box-shadow: 10px 10px 20px grey; margin-left: 50px;">
-      
-</div>
-</div>
-
-</div><br><br><br>
-
-<div class="coup">
-    <h1>Nos Coups de Coeur</h1><br><br>
-
+    <div class="services-section">
+        <div class="service-content-card">
+            <span class="service-badge">SERVICE PREMIUM</span>
+            <h2>Tressage Professionnel <br> <span class="highlight-pink">Sur Rendez-vous</span></h2>
+            <p>Nos coiffeuses expertes vous accueillent dans un espace moderne. Choisissez votre style, réservez votre créneau en quelques clics.</p>
+            
+            <div class="service-features">
+                <div class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Expertise de 10+ ans</span>
+                </div>
+                <div class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Produits premium inclus</span>
+                </div>
+                <div class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Annulation gratuite 24h avant</span>
+                </div>
+            </div>
+    
+            <button class="btn-primary">
+                <i class='bx bx-calendar-event'></i>
+                Réserver Maintenant
+            </button>
+        </div>
+    
+        <div class="service-image-container">
+            <img src="{{ asset('assets/twist.jpg') }}" alt="Service Tressage" class="service-image">
+        </div>
     </div>
     
-
-</body>
-</html>
+    <div class="best-sellers-section">
+        <p class="section-subtitle">BEST-SELLERS</p>
+        <h1>Nos Coups de Cœur</h1>
+    
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <span class="product-badge badge-sale">-20%</span>
+                <div class="product-image-wrapper">
+                    <img src="{{ asset('assets/french_curly.jpg') }}" alt="Mèches Brésiliennes">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Extensions</span>
+                    <h3>Mèches Brésiliennes Premium</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-count">(48 avis)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">45 000 FCFA</span>
+                        <span class="old-price">55 000 FCFA</span>
+                    </div>
+                    <button class="btn-outline">Ajouter au panier</button>
+                </div>
+            </div>
+    
+            <!-- Product 2 -->
+            <div class="product-card">
+                <span class="product-badge badge-new">NOUVEAU</span>
+                <div class="product-image-wrapper">
+                    <img src="{{ asset('assets/lp.jpg') }}" alt="Pagne Wax">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Tissus</span>
+                    <h3>Pagne Wax Authentique</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="review-count">(48 avis)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">25 000 FCFA</span>
+                    </div>
+                    <button class="btn-outline">Ajouter au panier</button>
+                </div>
+            </div>
+    
+            <!-- Product 3 -->
+            <div class="product-card">
+                <span class="product-badge badge-sale">-15%</span>
+                <div class="product-image-wrapper">
+                    <img src="{{ asset('assets/sac.jpg') }}" alt="Sac à Main Cuir">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Accessoires</span>
+                    <h3>Sac à Main Cuir</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-count">(48 avis)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">35 000 FCFA</span>
+                        <span class="old-price">42 000 FCFA</span>
+                    </div>
+                    <button class="btn-outline">Ajouter au panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="testimonial-section">
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="testimonial-image-wrapper">
+                <img src="{{ asset('assets/yu.jpg') }}" alt="Client Heureux">
+            </div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">Une expérience exceptionnelle ! Les mèches sont de qualité premium et le service de tressage est impeccable. L'équipe est professionnelle et à l'écoute. Je recommande vivement !</p>
+                <div class="testimonial-author">
+                    <h4>Aminata Diallo</h4>
+                    <span>Cliente depuis 2023</span>
+                </div>
+                <button class="btn-light">Voir tous les avis</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="engagements-section">
+        <p class="section-subtitle">POURQUOI NOUS CHOISIR</p>
+        <h1>Nos Engagements</h1><br>
+        
+        <div class="engagements-grid">
+            <div class="engagement-card">
+                <div class="icon-box">
+                    <i class='bx bx-package' style='font-size: 32px;'></i>
+                </div>
+                <h3>Livraison Rapide</h3>
+                <p>Expédition sous 24h. Livraison gratuite dès 50€ d'achat. Suivi en temps réel de votre commande.</p>
+            </div>
+    
+            <div class="engagement-card">
+                <div class="icon-box">
+                    <i class='bx bx-badge-check' style='font-size: 32px;'></i>
+                </div>
+                <h3>Qualité Garantie</h3>
+                <p>Produits 100% authentiques. Garantie satisfait ou remboursé pendant 30 jours.</p>
+            </div>
+    
+            <div class="engagement-card">
+                <div class="icon-box">
+                    <i class='bx bx-support' style='font-size: 32px;'></i>
+                </div>
+                <h3>Support 7j/7</h3>
+                <p>Notre équipe répond à vos questions par chat, email ou téléphone tous les jours.</p>
+            </div>
+        </div>
+    </div>
+@endsection
