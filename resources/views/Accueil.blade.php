@@ -22,8 +22,15 @@
             </ul>
 
             <div class="nav-actions">
-                <button class="btn-connexion">Prendre rendez-vous</button>
-                <button class="btn-connexion">Connexion</button>
+                <a href="{{ route('rendez-vous') }}" class="btn-connexion" style="text-decoration: none;">Prendre rendez-vous</a>
+                @auth
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn-connexion">Déconnexion</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="btn-connexion">Connexion</a>
+                @endauth
                 <div class="cart-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="9" cy="21" r="1"></circle>

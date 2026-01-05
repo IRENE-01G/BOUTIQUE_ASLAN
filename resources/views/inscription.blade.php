@@ -38,36 +38,46 @@
                 <h2>Créer un compte</h2>
                 <p class="subtitle">Commencez votre expérience shopping unique</p>
 
-                <form action="#" method="POST" class="auth-form">
+                <form action="{{ route('register.post') }}" method="POST" class="auth-form">
+                    @csrf
                     <div class="form-group">
                         <label style="margin-bottom: 10px;" for="name">Nom complet</label>
                         <div class="input-with-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                            <input type="text" id="name" placeholder="Votre nom" required>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" value="{{ old('name') }}" required>
                         </div>
+                        @error('name')
+                            <span style="color: red; font-size: 0.8rem;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label style="margin-bottom: 10px;"         for="email">Adresse email</label>
                         <div class="input-with-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <input type="email" id="email" placeholder="exemple@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="exemple@email.com" value="{{ old('email') }}" required>
                         </div>
+                        @error('email')
+                            <span style="color: red; font-size: 0.8rem;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label style="margin-bottom: 10px;" for="password">Mot de passe</label>
                         <div class="input-with-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                            <input type="password" id="password" placeholder="••••••••" required>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required>
                         </div>
+                        @error('password')
+                            <span style="color: red; font-size: 0.8rem;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label style="margin-bottom: 10px;" for="password_confirmation">Confirmer le mot de passe</label>
                         <div class="input-with-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3"></path></svg>
-                            <input type="password" id="password_confirmation" placeholder="••••••••" required>
+                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="••••••••" required>
                         </div>
                     </div>
 
