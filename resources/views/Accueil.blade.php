@@ -1,7 +1,32 @@
 @extends('layout.app')
 
+<<<<<<< HEAD
 @section('content')
     <section class="hero">
+=======
+            <div class="nav-actions">
+                <a href="{{ route('rendez-vous') }}" class="btn-connexion" style="text-decoration: none;">Prendre rendez-vous</a>
+                @auth
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn-connexion">Déconnexion</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="btn-connexion">Connexion</a>
+                @endauth
+                <div class="cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="badge">0</span>
+                </div>
+            </div>
+        </nav>
+    </header><br><br><br>
+    <section class="hero-section">
+>>>>>>> aed3f578713dd423a6d2266c8a50946967d87ce0
         <div class="hero-image-container">
             <img src="{{ asset('assets/yu.jpg') }}" alt="Beauty Model" class="hero-image">
         </div>

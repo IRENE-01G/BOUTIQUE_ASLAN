@@ -6,6 +6,7 @@
     <title>Connexion - Beauté & Mode</title>
     <link rel="stylesheet" href="{{ asset('styles/Accueil.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/inscription.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/lg.png') }}">   
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -38,13 +39,17 @@
                 <h2>Bon retour !</h2>
                 <p class="subtitle">Entrez vos identifiants pour continuer</p>
 
-                <form action="#" method="POST" class="auth-form">
+                <form action="{{ route('login.post') }}" method="POST" class="auth-form">
+                    @csrf
                     <div class="form-group">
                         <label style="margin-bottom: 10px;" for="email">Adresse email</label>
                         <div class="input-with-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <input type="email" id="email" placeholder="exemple@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="exemple@email.com" value="{{ old('email') }}" required>
                         </div>
+                        @error('email')
+                            <span style="color: red; font-size: 0.8rem;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="form-group">
@@ -54,8 +59,11 @@
                         </div>
                         <div class="input-with-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                            <input type="password" id="password" placeholder="••••••••" required>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required>
                         </div>
+                        @error('password')
+                            <span style="color: red; font-size: 0.8rem;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn-submit">
