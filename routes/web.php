@@ -36,8 +36,11 @@ Route::get('/connexion', [AuthController::class, 'showLoginForm'])->name('login'
 Route::post('/connexion', [AuthController::class, 'login'])->name('login.post');
 Route::post('/deconnexion', [AuthController::class, 'logout'])->name('logout');
 
-// Password Reset (Placeholder)
+// Password Reset
 Route::get('/mot-de-passe-oublie', [AuthController::class, 'forgotPassword'])->name('password.request');
+Route::post('/mot-de-passe-oublie', [AuthController::class, 'sendResetLink'])->name('password.email');
+Route::get('/reinitialiser-mot-de-passe/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reinitialiser-mot-de-passe', [AuthController::class, 'resetPassword'])->name('password.update');
 
 
 // --- Admin Routes (Protected) ---

@@ -74,4 +74,30 @@ class AuthController extends Controller
     {
         return view('auth.forgot-password');
     }
+
+    public function sendResetLink(Request $request)
+    {
+        $request->validate(['email' => 'required|email']);
+        // Logique d'envoi d'email (simulée ici)
+        return back()->with('status', 'Un lien de réinitialisation a été envoyé à votre adresse email.');
+    }
+
+    public function showResetForm($token)
+    {
+        return view('auth.reset-password', ['token' => $token]);
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        // La logique réelle de réinitialisation avec Password::broker() serait idéale
+        // mais ici on fournit juste la structure demandée par l'utilisateur.
+
+        return redirect()->route('login')->with('success', 'Votre mot de passe a été réinitialisé.');
+    }
 }

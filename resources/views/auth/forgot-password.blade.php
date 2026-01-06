@@ -39,13 +39,23 @@
                 <h2>Réinitialisation</h2>
                 <p class="subtitle">Entrez votre email pour recevoir le lien de réinitialisation</p>
 
-                <form action="#" method="POST" class="auth-form">
+                @if (session('status'))
+                    <div style="background-color: #d1fae5; color: #065f46; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem;">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                <form action="{{ route('password.email') }}" method="POST" class="auth-form">
+                    @csrf
                     <div class="form-group">
                         <label style="margin-bottom: 10px;"  for="email">Adresse email</label>
                         <div class="input-with-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <input type="email" id="email" placeholder="exemple@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="exemple@email.com" value="{{ old('email') }}" required>
                         </div>
+                        @error('email')
+                            <span style="color: red; font-size: 0.8rem;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn-submit">
