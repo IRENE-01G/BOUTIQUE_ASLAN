@@ -71,10 +71,13 @@
             </ul>
 
             <div class="sidebar-bottom">
-                <a href="{{ url('/') }}" class="logout-btn">
-                    <i class='bx bx-log-out-circle'></i>
-                    <span>Déconnexion</span>
-                </a>
+                <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                    @csrf
+                    <button type="submit" class="logout-btn" style="background: none; border: none; width: 100%; text-align: left; font-family: inherit; font-size: inherit; cursor: pointer;">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span>Déconnexion</span>
+                    </button>
+                </form>
             </div>
         </aside>
 

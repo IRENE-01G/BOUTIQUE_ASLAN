@@ -27,11 +27,10 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="{{ url('/') }}">Accueil</a></li>
-                <li><a href="#">Boutique</a></li>
-                <li><a href="{{ url('/services') }}" class="active">Services</a></li>
-                <!-- <li><a href="#">Rendez-vous</a></li> -->
-                <li><a href="{{ url('/apropos') }}">À propos</a></li>
+                <li><a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Accueil</a></li>
+                <li><a href="{{ url('/boutique') }}" class="{{ request()->is('boutique*') ? 'active' : '' }}">Boutique</a></li>
+                <li><a href="{{ url('/services') }}" class="{{ request()->is('services*') ? 'active' : '' }}">Services</a></li>
+                <li><a href="{{ url('/apropos') }}" class="{{ request()->is('apropos*') ? 'active' : '' }}">À propos</a></li>
             </ul>
 
             <div class="nav-actions">
